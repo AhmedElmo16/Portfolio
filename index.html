@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,20 +17,22 @@
     <!--Navigationsbar-->
     <nav id="navbar">
       <ul>
-        <li><a href="#projects">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#projects">Projekte</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li class="lang" onclick=Language()><svg xmlns="http://www.w3.org/2000/svg" height="45px" viewBox="0 -960 960 960" width="45px" fill="var(--text)"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/></svg>
+        <p> Eng</p></li>
       </ul>
     </nav>
 
     <!--Wilkommen-->
     <section id="welcome-section">
       <h1>Hey<span class="highlight">!</span></h1>
-      <p>Description</p>
+      <p class="description">Ich bin Ahmed, Ihr Frontend- und Softwareentwickler</p>
     </section>
 
     <!--Projekte-->
     <section id="projects">
-      <h2>These are some of my projects</h2>
+      <h2>Hier sind einige meiner <span class="underline">Projekte.</span></h2>
       <div class="projects-grid">
 
         <a class="project-tile" href="https://ahmedelmo16.github.io/Steuerberatungsgesellschaft/" target="_blank">
@@ -47,24 +49,50 @@
           <img class="prImage" src="./3Python.png" alt="[Technical Documentation Page]"/>
           <p><span class="code">&lt; </span>Technical Documentation Page<span class="code"> &#47;&gt;</span></p>
         </a>
-
-        <a class="project-tile" href="#welcome-section" target="_blank">
-          <img class="prImage" src="./1SurveyForm.png" alt="[Survey Page]"/>
-          <p><span class="code">&lt; </span>Survey Page<span class="code"> &#47;&gt;</span></p>
-        </a>
-        
       </div>
     </section>
 
     <!--Kontakt-->
     <section id="contact">
-      <h2>Contact me<span class="highlight">.</span></h2>
+      <h2>Kontaktieren Sie mich<span class="highlight">.</span></h2>
       <div class="contact-links">
         <a id="mail-link" class="contact-link" href="mailto:ahelmoursi@gmail.com" target="_blank">
-          <i class="fas fa-at"> Send a mail</i>
+          <i class="fas fa-at"> E-Mail</i>
         </a>
       </div>
     </section>
     
+    <script>
+      function Language() {
+        const langElement = document.querySelector('.lang p');
+        const currentLang = langElement.textContent.trim();
+        
+        if (currentLang === 'Eng') {
+          document.documentElement.lang = 'en';
+          langElement.textContent = ' DE';
+          document.querySelector('#navbar ul li a[href="#projects"]').textContent = 'Work';
+          document.querySelector('#navbar ul li a[href="#contact"]').textContent = 'Contact';
+          document.querySelector('#welcome-section h1').innerHTML = 'Hey<span class="highlight">!</span>';
+          document.querySelector('#welcome-section .description').textContent = "I'm Ahmed, your frontend and software developer";
+          document.querySelector('#projects h2').innerHTML = 'These are some of my <span class="underline">projects.</span>';
+          document.querySelector('#projects .project-tile:nth-child(2) p').innerHTML = '<span class="code">&lt; </span>Product Landing Page<span class="code"> &#47;&gt;</span>';
+          document.querySelector('#projects .project-tile:nth-child(3) p').innerHTML = '<span class="code">&lt; </span>Technical Documentation Page<span class="code"> &#47;&gt;</span>';
+          document.querySelector('#contact h2').innerHTML = 'Contact me<span class="highlight">.</span>';
+          document.querySelector('#mail-link i').innerHTML = ' Send a mail';
+        } else {
+          document.documentElement.lang = 'de';
+          langElement.textContent = ' Eng';
+          document.querySelector('#navbar ul li a[href="#projects"]').textContent = 'Projekte';
+          document.querySelector('#navbar ul li a[href="#contact"]').textContent = 'Kontakt';
+          document.querySelector('#welcome-section h1').innerHTML = 'Hey<span class="highlight">!</span>';
+          document.querySelector('#welcome-section .description').textContent = 'Ich bin Ahmed, Ihr Frontend- und Softwareentwickler';
+          document.querySelector('#projects h2').innerHTML = 'Hier sind einige meiner <span class="underline">Projekte.</span>';
+          document.querySelector('#projects .project-tile:nth-child(2) p').innerHTML = '<span class="code">&lt; </span>Product Landing Page<span class="code"> &#47;&gt;</span>';
+          document.querySelector('#projects .project-tile:nth-child(3) p').innerHTML = '<span class="code">&lt; </span>Technical Documentation Page<span class="code"> &#47;&gt;</span>';
+          document.querySelector('#contact h2').innerHTML = 'Kontaktieren Sie mich<span class="highlight">.</span>';
+          document.querySelector('#mail-link i').innerHTML = ' E-Mail';
+        }
+      }
+    </script>
   </body>
 </html>
