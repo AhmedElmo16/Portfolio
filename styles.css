@@ -85,6 +85,7 @@ nav a:hover {
 
 .lang {
     cursor: pointer;
+    min-width: 90px;
 }
 
 #welcome-section {
