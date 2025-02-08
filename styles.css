@@ -30,8 +30,7 @@ h1 {
 h2 {
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 2rem;
-    text-decoration: underline;
+    margin-bottom: 4rem;
 }
 
 p, li {
@@ -42,41 +41,50 @@ p, li {
     color: var(--highlight);
 }
 
+.underline {
+    text-decoration: underline;
+    text-decoration-color: var(--highlight);
+}
+
 a {
     text-decoration: none;
 }
 
 nav {
-    width: 100vw;
-    min-height: 10vh;
     background-color: var(--secondary);
     position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
     box-shadow: 0 1px 0 gray;
 }
 
 nav ul {
     width: 100%;
-    margin-right: 1rem;
-    list-style: none;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    list-style: none;
 }
 
-nav ul li a {
+nav li {
+    height: 10vh;
+}
+
+nav a, .lang {
     text-decoration: none;
-    color: var(--text);
-    padding: 1.42rem;
-    text-align: center;
+    color: black;
+    padding: 0 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-nav ul li a:hover {
-    background-color: var(--text);
+nav a:hover {
     color: var(--bg);
+    background-color: var(--text);
+}
+
+.lang {
+    cursor: pointer;
 }
 
 #welcome-section {
@@ -87,6 +95,12 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.description {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-inline: 1rem;
 }
 
 #projects {
