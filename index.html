@@ -99,15 +99,14 @@
         sidebar.style.display = "none";
       }
 
-
       // Language
       function Language() {
-        const langElement = document.querySelector('.lang p');
-        const currentLang = langElement.textContent.trim();
+        const langElements = document.querySelectorAll('.lang p');
+        const currentLang = langElements[0].textContent.trim();
         
         if (currentLang === 'Eng') {
           document.documentElement.lang = 'en';
-          langElement.textContent = ' DE';
+          langElements.forEach(el => el.textContent = ' DE');
           document.querySelector('#navbar ul li a[href="#projects"]').textContent = 'Work';
           document.querySelector('#navbar ul li a[href="#contact"]').textContent = 'Contact';
           document.querySelector('#welcome-section h1').innerHTML = 'Hey<span class="highlight">!</span>';
@@ -119,7 +118,7 @@
           document.querySelector('#mail-link i').innerHTML = ' Send a mail';
         } else {
           document.documentElement.lang = 'de';
-          langElement.textContent = ' Eng';
+          langElements.forEach(el => el.textContent = ' Eng');
           document.querySelector('#navbar ul li a[href="#projects"]').textContent = 'Projekte';
           document.querySelector('#navbar ul li a[href="#contact"]').textContent = 'Kontakt';
           document.querySelector('#welcome-section h1').innerHTML = 'Hey<span class="highlight">!</span>';
