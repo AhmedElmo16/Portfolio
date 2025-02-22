@@ -175,7 +175,8 @@ nav a:hover {
 
 .prImage {
     width: 100%;
-    height: auto;
+    height: 340px;
+    object-fit: cover;
 }
 
 .project-tile p {
